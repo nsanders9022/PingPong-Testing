@@ -6,6 +6,7 @@ namespace PingPong.Objects
   public class PingPongGeneratorApp
   {
     private int _number;
+    private static List<string> _instances = new List<string>{};
 
     public void PingPongGenerator(int number)
     {
@@ -22,15 +23,26 @@ namespace PingPong.Objects
       _number = aNumber;
     }
 
-    public List<int> PingPongResult(int number)
+    public static void DeleteAll()
     {
-      List<int> result = new List<int> {};
+      _instances.Clear();
+    }
+
+    public List<string> PingPongResult(int number)
+    {
+      List<string> result = new List<string> {};
       for (int i = 1; i <= number; i++)
       {
-        result.Add(i);
+        if (i % 3 == 0)
+        {
+          result.Add("ping");
+        }
+        else
+        {
+          result.Add(i.ToString());
+        }
       }
       return result;
     }
-
   }
 }
