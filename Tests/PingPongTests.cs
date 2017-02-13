@@ -21,6 +21,21 @@ namespace PingPongGenerator
       List<string> expectedResult = new List<string>{"1", "2", "ping"};
       Assert.Equal(expectedResult, testPing.PingPongResult(3));
     }
+    [Fact]
+    public void PingPongResult_Pong_numberPong()
+    {
+      PingPongGeneratorApp testPong = new PingPongGeneratorApp();
+      List<string> expectedResult = new List<string>{"1", "2", "ping", "4", "pong"};
+      Assert.Equal(expectedResult, testPong.PingPongResult(5));
+    }
+
+    [Fact]
+    public void PingPongResult_PingPong_numberPingPong()
+    {
+      PingPongGeneratorApp testPingPong = new PingPongGeneratorApp();
+      List<string> expectedResult = new List<string>{"1", "2", "ping", "4", "pong", "ping", "7", "8", "ping", "pong", "11", "ping", "13", "14", "pingpong"};
+      Assert.Equal(expectedResult, testPingPong.PingPongResult(15));
+    }
 
     public void Dispose()
     {
