@@ -3,12 +3,11 @@ using System;
 
 namespace PingPong.Objects
 {
-  public class PingPongGenerator
+  public class PingPongGeneratorApp
   {
-
     private int _number;
 
-    public PingPongGenerator(int number)
+    public void PingPongGenerator(int number)
     {
       _number = number;
     }
@@ -26,10 +25,10 @@ namespace PingPong.Objects
     public List<int> PingPongResult(int number)
     {
       List<int> result = new List<int> {};
-      // for (int i = 1; i <= number; i++)
-      // {
-      //   Console.WriteLine(i);
-      // }
+      for (int i = 1; i <= number; i++)
+      {
+        result.Add(i);
+      }
       return result;
     }
 
